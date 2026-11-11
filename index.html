@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HASSAN SYMBOLS & EMOJI HUB</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-base: #060810;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --bg-card-hover: rgba(30, 41, 59, 0.9);
+            --accent-cyan: #00f2fe;
+            --accent-blue: #4facfe;
+            --accent-purple: #7f00ff;
+            --accent-pink: #e100ff;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-glow: rgba(0, 242, 254, 0.3);
+            --border-card: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(127, 0, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.5) 0%, transparent 100%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            font-family: 'Rajdhani', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #090d16; }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple));
+            border-radius: 4px;
+        }
+
+        /* --- HEADER & NAVBAR --- */
+        header {
+            background: rgba(9, 13, 22, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-glow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 15px;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .brand-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .brand-logo {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 0 10px var(--accent-cyan);
+            object-fit: cover;
+        }
+        .brand-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #fff, var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.5px;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            max-width: 250px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 8px 12px 8px 35px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            color: #fff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.85rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .search-input:focus {
+            border-color: var(--accent-pink);
+            box-shadow: 0 0 12px rgba(225, 0, 255, 0.3);
+        }
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-cyan);
+            font-size: 0.85rem;
+        }
+
+        /* --- STICKY CATEGORY NAV --- */
+        .category-nav {
+            background: rgba(6, 8, 16, 0.95);
+            border-bottom: 1px solid var(--border-card);
+            padding: 8px 15px;
+            overflow-x: auto;
+            white-space: nowrap;
+            position: sticky;
+            top: 59px;
+            z-index: 900;
+            display: flex;
+            gap: 6px;
+        }
+        .category-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 12px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-card);
+            border-radius: 15px;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+        }
+        .category-tab:hover, .category-tab.active {
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.2), rgba(127, 0, 255, 0.2));
+            border-color: var(--accent-cyan);
+            color: #fff;
+            box-shadow: 0 0 8px rgba(0, 242, 254, 0.2);
+        }
+
+        /* --- MAIN CONTENT --- */
+        main {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 15px;
+            flex: 1;
+        }
+
+        /* SECTIONS & GRID */
+        .category-section { margin-bottom: 25px; scroll-margin-top: 110px; }
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--border-card);
+        }
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .symbol-count {
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            background: rgba(0, 242, 254, 0.15);
+            border: 1px solid var(--border-glow);
+            border-radius: 8px;
+            color: var(--accent-cyan);
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .symbol-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+            gap: 6px;
+        }
+        .symbol-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 8px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .symbol-card:active {
+            background: var(--accent-cyan);
+            color: #000;
+            transform: scale(0.95);
+        }
+
+        /* --- REVIEW SECTION --- */
+        .review-section {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid var(--border-glow);
+            border-radius: 14px;
+            padding: 20px 15px;
+            margin: 30px 0 10px 0;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.1);
+        }
+        .review-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.95rem;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+        }
+        .review-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .stars-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .star-btn {
+            background: transparent;
+            border: none;
+            font-size: 1.8rem;
+            color: #475569;
+            cursor: pointer;
+            transition: transform 0.2s, color 0.2s;
+        }
+        .star-btn:hover, .star-btn.active {
+            color: #fbbf24;
+            transform: scale(1.15);
+            text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+        }
+
+        /* --- TOAST --- */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 10000;
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            white-space: nowrap;
+        }
+        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: rgba(5, 8, 15, 0.95);
+            border-top: 1px solid var(--border-glow);
+            padding: 20px 15px;
+            margin-top: 20px;
+        }
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+        .footer-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border-glow);
+            border-radius: 10px;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .footer-link:hover {
+            border-color: var(--accent-pink);
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.2), rgba(225, 0, 255, 0.2));
+        }
+        .footer-copy { color: var(--text-muted); font-size: 0.72rem; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER NAVIGATION -->
+    <header>
+        <div class="header-container">
+            <div class="brand-box">
+                <img src="https://i.ibb.co/21qmyHBJ/jawadmd.jpg" alt="Logo" class="brand-logo">
+                <div class="brand-title">HASSAN SYMBOLS</div>
+            </div>
+
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search symbols..." oninput="handleSearch()">
+            </div>
+        </div>
+    </header>
+
+    <!-- CATEGORY NAVIGATION TAB BAR -->
+    <nav class="category-nav" id="categoryNav"></nav>
+
+    <!-- MAIN SYMBOLS HUB -->
+    <main>
+        <!-- SYMBOL CATEGORIES CONTAINER -->
+        <div id="symbolsContainer"></div>
+
+        <!-- 5-STAR REVIEW SECTION -->
+        <div class="review-section">
+            <div class="review-title"><i class="fa-solid fa-star"></i> RATE OUR WEBSITE</div>
+            <div class="review-subtitle">Click stars to send review directly to Developer WhatsApp!</div>
+            <div class="stars-container">
+                <button class="star-btn" onclick="sendReview(1)" onmouseover="highlightStars(1)" onmouseout="resetStars()">★</button>
+                <button class="star-btn" onclick="sendReview(2)" onmouseover="highlightStars(2)" onmouseout="resetStars()">★</button>
+                <button class="star-btn" onclick="sendReview(3)" onmouseover="highlightStars(3)" onmouseout="resetStars()">★</button>
+                <button class="star-btn" onclick="sendReview(4)" onmouseover="highlightStars(4)" onmouseout="resetStars()">★</button>
+                <button class="star-btn" onclick="sendReview(5)" onmouseover="highlightStars(5)" onmouseout="resetStars()">★</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- TOAST NOTIFICATION SYSTEM -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMsg">Copied!</span>
+    </div>
+
+    <!-- OFFICIAL FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="https://toolkit.page.gd/t/hassan-2nd-toolkit" target="_blank" class="footer-link">
+                    <i class="fa-solid fa-toolbox"></i> MAIN TOOLKIT
+                </a>
+                <a href="https://hassan-toolkit-pro.vercel.app" target="_blank" class="footer-link">
+                    <i class="fa-solid fa-layer-group"></i> 2ND TOOLKIT
+                </a>
+                <a href="https://hassan-ttvd.vercel.app" target="_blank" class="footer-link">
+                    <i class="fa-solid fa-download"></i> TT DOWNLOADER
+                </a>
+                <a href="https://hassan-sensi-v1.vercel.app" target="_blank" class="footer-link">
+                    <i class="fa-solid fa-crosshair"></i> SENSI HUB
+                </a>
+                <a href="https://ff.garena.com/en/" target="_blank" class="footer-link">
+                    <i class="fa-solid fa-gamepad"></i> FREE FIRE
+                </a>
+                <a href="https://whatsapp.com/channel/0029VbE1NH99Bb65S8oOnS47" target="_blank" class="footer-link">
+                    <i class="fa-brands fa-whatsapp"></i> SOURCE CODE
+                </a>
+                <a href="https://wa.me/923294675242" target="_blank" class="footer-link">
+                    <i class="fa-solid fa-headset"></i> CONTACT
+                </a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 HASSAN EMOJI'S. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT SYSTEM ENGINE -->
+    <script>
+        const symbolData = [
+            {
+                name: "Star Symbols",
+                icon: "fa-star",
+                symbols: ["★", "☆", "✡", "✦", "✧", "✩", "✪", "✫", "✬", "✭", "✮", "✯", "✰", "⁂", "⁎", "⁑", "✢", "✣", "✤", "✥", "✱", "✲", "✳", "✴", "✵", "✶", "✷", "✸", "✹", "✺", "✻", "✼", "✽", "✾", "✿", "❀", "❁", "❂", "❃", "❇", "❈", "❉", "❊", "❋", "❄", "❆", "❅", "⋆", "≛", "ᕯ", "࿏", "꙰", "۞", "⭒", "⍟", "⭐", "🌠", "🌟", "💫", "✨", "🌃", "🔯"]
+            },
+            {
+                name: "Copyright & Law",
+                icon: "fa-scale-balanced",
+                symbols: ["©", "®", "™", "℠", "℡", "℗", "‱", "№", "℀", "℁", "℅", "℆", "⅍", "☊", "☎", "☏", "⌨", "✁", "✂", "✃", "✄", "✆", "✇", "✈", "✉", "✎", "✏", "✐", "✑", "✒", "‰", "§", "¶", "✌️", "☝️", "☞", "☛", "☟", "☜", "☚", "✍️"]
+            },
+            {
+                name: "Currency",
+                icon: "fa-dollar-sign",
+                symbols: ["¢", "$", "€", "£", "¥", "₮", "৲", "৳", "௹", "฿", "៛", "₠", "₡", "₢", "₣", "₤", "₥", "₦", "₧", "₨", "₩", "₪", "₫", "₭", "₯", "₰", "₱", "₲", "₳", "₴", "₵", "￥", "﷼", "¤", "ƒ"]
+            },
+            {
+                name: "Brackets",
+                icon: "fa-code",
+                symbols: ["〈", "〉", "《", "》", "「", "」", "『", "』", "【", "】", "〔", "〕", "︵", "︶", "︷", "︸", "︹", "︺", "︻", "︼", "︽", "︾", "︿", "﹀", "﹁", "﹂", "﹃", "﹄", "﹙", "﹚", "﹛", "﹜", "﹝", "﹞", "﹤", "﹥", "（", "）", "＜", "＞", "｛", "｝", "〖", "〗", "〘", "〙", "〚", "〛", "«", "»", "‹", "›", "〈", "〉", "〱"]
+            },
+            {
+                name: "Chess & Cards",
+                icon: "fa-chess",
+                symbols: ["♔", "♕", "♖", "♗", "♘", "♙", "♚", "♛", "♜", "♝", "♞", "♟", "♤", "♠", "♧", "♣", "♡", "♥", "♢", "♦"]
+            },
+            {
+                name: "Music",
+                icon: "fa-music",
+                symbols: ["♩", "♪", "♫", "♬", "♭", "♮", "♯", "°", "ø", "؂", "≠", "≭"]
+            },
+            {
+                name: "Arrows",
+                icon: "fa-arrow-right",
+                symbols: ["↕", "↖", "↗", "↘", "↙", "↚", "↛", "↜", "↝", "↞", "↟", "↠", "↡", "↢", "↣", "↤", "↥", "↦", "↧", "↨", "↩", "↪", "↫", "↬", "↭", "↮", "↯", "↰", "↱", "↲", "↳", "↴", "↶", "↷", "↸", "↹", "↺", "↻", "↼", "↽", "↾", "↿", "⇀", "⇁", "⇂", "⇃", "⇄", "⇅", "⇆", "⇇", "⇈", "⇉", "⇊", "⇋", "⇌", "⇍", "⇎", "⇏", "⇕", "⇖", "⇗", "⇘", "⇙", "⇚", "⇛", "⇜", "⇝", "⇞", "⇟", "⇠", "⇡", "⇢", "⇣", "⇤", "⇥", "⇦", "⇧", "⇨", "⇩", "⇪", "▶", "➔", "➘", "➙", "➚", "➛", "➜", "➝", "➞", "➟", "➠", "➡", "➢", "➣", "➤", "➥", "➦", "➧", "➨", "➩", "➪", "➫", "➬", "➭", "➮", "➯", "➱", "➲", "➳", "➴", "➵", "➶", "➷", "➸", "➹", "➺", "➻", "➼", "➽", "➾", "⤴", "⤵", "↵", "↓", "↔", "←", "→", "↑"]
+            },
+            {
+                name: "Hearts",
+                icon: "fa-heart",
+                symbols: ["♥", "♡", "❥", "❣", "❦", "❧", "დ", "ღ", "۵", "ლ", "ও", "❤", "💙", "🧡", "💚", "💛", "💜", "🖤", "💗", "💓", "💔", "💟", "💕", "💖", "❣️", "💘", "💝", "💞"]
+            },
+            {
+                name: "Checkmarks",
+                icon: "fa-circle-check",
+                symbols: ["✓", "✔", "✗", "✘", "☓", "∨", "√", "✔️", "✅", "❎", "❌", "💯", "☐", "☑", "☒"]
+            },
+            {
+                name: "Smileys & Emojis",
+                icon: "fa-face-smile",
+                symbols: ["😂", "😄", "😃", "😀", "😊", "😉", "😍", "😘", "😚", "😗", "😙", "😜", "😝", "😛", "😳", "😁", "😔", "😌", "😒", "😞", "😣", "😢", "😭", "😪", "😥", "😰", "😅", "😓", "😩", "😫", "😨", "😱", "😠", "😡", "😤", "😖", "😆", "😋", "😷", "😎", "😴", "😵", "😲", "😟", "😦", "😧", "😈", "👿", "😮", "😬", "😐", "😕", "😯", "😶", "😇", "☺️", "😏", "😑", "🙃", "🙄", "☹️", "🤐", "🤑", "🤒", "🤓", "🤔", "🤕", "🙁", "🙂", "🤗", "🤣", "🤠", "🥳", "🥸", "🤡", "🤖", "👻", "☠️", "👽", "👾", "👺", "👹", "💀", "🙈", "🙉", "🙊", "💥", "💫", "💦", "💨", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "🤎", "💔", "❣️", "💕", "💞", "💓", "💗", "💖", "💘", "💝"]
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderNavTabs();
+            renderSymbols(symbolData);
+        });
+
+        function renderNavTabs() {
+            const nav = document.getElementById('categoryNav');
+            let html = '';
+            symbolData.forEach((cat, index) => {
+                const catId = `cat-${index}`;
+                html += `
+                    <a href="#${catId}" class="category-tab">
+                        <i class="fa-solid ${cat.icon}"></i> ${cat.name}
+                    </a>
+                `;
+            });
+            nav.innerHTML = html;
+        }
+
+        function renderSymbols(data) {
+            const container = document.getElementById('symbolsContainer');
+            let html = '';
+
+            data.forEach((cat, index) => {
+                const catId = `cat-${index}`;
+                const validSymbols = cat.symbols.filter(s => s && s.trim() !== "");
+
+                if (validSymbols.length === 0) return;
+
+                html += `
+                    <section class="category-section" id="${catId}">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <i class="fa-solid ${cat.icon}"></i> ${cat.name}
+                            </div>
+                            <span class="symbol-count">${validSymbols.length}</span>
+                        </div>
+                        <div class="symbol-grid">
+                `;
+
+                validSymbols.forEach(sym => {
+                    const escapedSym = sym.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                    html += `
+                        <div class="symbol-card" onclick="handleSymbolClick('${escapedSym}')">
+                            ${sym}
+                        </div>
+                    `;
+                });
+
+                html += `
+                        </div>
+                    </section>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // 1-Click Instant Copy Function
+        function handleSymbolClick(symbol) {
+            const textArea = document.createElement("textarea");
+            textArea.value = symbol;
+            textArea.style.position = "fixed";
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.opacity = "0";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                document.execCommand('copy');
+                showToast(`Copied: ${symbol}`);
+            } catch (err) {
+                navigator.clipboard.writeText(symbol).then(() => {
+                    showToast(`Copied: ${symbol}`);
+                }).catch(() => {
+                    showToast('Copied!');
+                });
+            }
+            document.body.removeChild(textArea);
+        }
+
+        // Star Review System
+        function highlightStars(count) {
+            const buttons = document.querySelectorAll('.star-btn');
+            buttons.forEach((btn, idx) => {
+                if (idx < count) {
+                    btn.style.color = '#fbbf24';
+                } else {
+                    btn.style.color = '#475569';
+                }
+            });
+        }
+
+        function resetStars() {
+            const buttons = document.querySelectorAll('.star-btn');
+            buttons.forEach(btn => {
+                btn.style.color = '#475569';
+            });
+        }
+
+        function sendReview(rating) {
+            let starsStr = '';
+            for (let i = 0; i < rating; i++) {
+                starsStr += '⭐';
+            }
+            const reviewMsg = `I REVIEWED ON YOUR SYMBOLS WEBSITE ${starsStr} YOUR WEBSITE ARE GOOD 👍`;
+            const whatsappUrl = `https://wa.me/923294675242?text=${encodeURIComponent(reviewMsg)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        let toastTimeout;
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.innerText = message;
+            toast.classList.add('show');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => toast.classList.remove('show'), 2000);
+        }
+
+        function handleSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (!query) {
+                renderSymbols(symbolData);
+                return;
+            }
+            const filtered = symbolData.map(cat => {
+                if (cat.name.toLowerCase().includes(query)) return cat;
+                const matches = cat.symbols.filter(s => s.includes(query));
+                if (matches.length > 0) return { ...cat, symbols: matches };
+                return null;
+            }).filter(cat => cat !== null);
+            renderSymbols(filtered);
+        }
+    </script>
+</body>
+</html>
